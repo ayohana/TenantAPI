@@ -13,6 +13,7 @@
 * As a manager, I want to be able to view (`GET`) and add (`POST`) contact information of tenants.
 * As a manager, I want to view (`GET`) a list of contact information by apartment name, apartment number or by a tenant's last name.
 * As a manager, I want to be able to update (`PUT`) and remove (`DELETE`) tenants.
+* As a developer, I want the application to still be able to display query search results when a user inputs only part of an apartment name. For instance, search query of apartment name `"baker"` will display tenants listed under `"Baker Apartments"`.
 * As a developer, I want to add a feature of API versioning so that I can keep different versions when I upgrade the application.
 
 ## Setup/Installation Requirements

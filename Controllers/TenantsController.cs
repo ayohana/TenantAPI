@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TenantAPI.Models;
 
 namespace TenantAPI.Controllers
@@ -20,16 +21,29 @@ namespace TenantAPI.Controllers
 
         // GET api/tenants
         [HttpGet]
-        public ActionResult<IEnumerable<Tenant>> Get()
+        public ActionResult<IEnumerable<Tenant>> Get(string apartmentName, string apartmentNumber, string lastName)
         {
-            return _db.Tenants.ToList();
+            var query = _db.Tenants.AsQueryable();
+            if (apartmentName != null)
+            {
+                query = query.Where(tenant => tenant.ApartmentName.Contains(apartmentName) == true);
+            }
+            if (apartmentNumber != null)
+            {
+                query = query.Where(tenant => tenant.ApartmentNumber == apartmentNumber);
+            }
+            if (lastName != null)
+            {
+                query = query.Where(tenant => tenant.LastName == lastName);
+            }
+            return query.ToList();
         }
 
         // GET api/tenants/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Tenant> Get(int id)
         {
-            return "value";
+            return _db.Tenants.FirstOrDefault(tenant => tenant.TenantId == id);
         }
 
         // POST api/tenants
@@ -42,14 +56,20 @@ namespace TenantAPI.Controllers
 
         // PUT api/tenants/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Tenant tenant)
         {
+            tenant.TenantId = id;
+            _db.Entry(tenant).State = EntityState.Modified;
+            _db.SaveChanges();
         }
 
         // DELETE api/tenants/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var tenantToDelete = _db.Tenants.FirstOrDefault(tenant => tenant.TenantId == id);
+            _db.Tenants.Remove(tenantToDelete);
+            _db.SaveChanges();
         }
     }
 }
