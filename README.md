@@ -11,7 +11,7 @@
 ## User Stories
 
 * As a manager, I want to be able to view (`GET`) and add (`POST`) contact information of tenants.
-* As a manager, I want to view (`GET`) contact information by a tenant's apartment number or their last name.
+* As a manager, I want to view (`GET`) a list of contact information by apartment name, apartment number or by a tenant's last name.
 * As a manager, I want to be able to update (`PUT`) and remove (`DELETE`) tenants.
 * As a developer, I want to add a feature of API versioning so that I can keep different versions when I upgrade the application.
 
@@ -27,16 +27,17 @@
     * Enter the command `dotnet build` to build the project using its dependencies.
     * Enter the command `dotnet ef database update` to create a new, empty database. 
     * Enter `dotnet run` to run the application.
-    * Enter URL `https://localhost:5001/api/tenants` in Postman using one of the HTTP Methods below.
+    * Enter URL `http://localhost:5000/api/tenants` in Postman using one of the HTTP Methods below.
     
 ## HTTP Methods and Routes
 
-| HTTP Method | HTTP Route | Output |
-| :-------------     | :------------- | :------------- |
-| GET | /api/tenants | View a list of all tenants |
-| POST | /api/tenants | Create a new tenant |
-| PUT | /api/tenants/{id} | Edit information on a tenant |
-| DELETE | /api/tenants/{id} | Remove a tenant |
+| HTTP Method | HTTP Route | Input | Output |
+| :---------- | :--------- | :---- | :----- |
+| GET | /api/tenants | N/A | View a list of all tenants |
+| GET | /api/tenants?apartmentname=`name+of+apt`&apartmentnumber=`apt#`&lastname=`last+name` | Insert search query values to HTTP route  | View a list of tenants by apartment name, apartment number and/or last name. |
+| POST | /api/tenants | JSON body | Create a new tenant |
+| PUT | /api/tenants/{id} | JSON body | Edit information on a tenant |
+| DELETE | /api/tenants/{id} | N/A | Remove a tenant |
 
 ## Known Bugs
 
