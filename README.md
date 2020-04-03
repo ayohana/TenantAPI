@@ -27,16 +27,16 @@
     * Enter the command `dotnet build` to build the project using its dependencies.
     * Enter the command `dotnet ef database update` to create a new, empty database. 
     * Enter `dotnet run` to run the application.
-    * Enter URL `http://localhost:5000/api/tenants` in Postman using one of the HTTP Methods below.
+    * Enter URL `https://localhost:5001/api/tenants` in Postman using one of the HTTP Methods below.
     
 ## HTTP Methods and Routes
 
 | HTTP Method | HTTP Route | Output |
 | :-------------     | :------------- | :------------- |
-| GET | /tenants | View a list of all tenants |
-| POST | /tenants | Create a new tenant |
-| PUT | /tenants/{id} | Edit information on a tenant |
-| DELETE | /tenants/{id} | Remove a tenant |
+| GET | /api/tenants | View a list of all tenants |
+| POST | /api/tenants | Create a new tenant |
+| PUT | /api/tenants/{id} | Edit information on a tenant |
+| DELETE | /api/tenants/{id} | Remove a tenant |
 
 ## Known Bugs
 

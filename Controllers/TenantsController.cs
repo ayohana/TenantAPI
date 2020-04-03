@@ -8,7 +8,7 @@ namespace TenantAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class TenantsController : ControllerBase
     {
         // GET api/values
         [HttpGet]
