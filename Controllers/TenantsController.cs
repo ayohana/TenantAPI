@@ -21,7 +21,7 @@ namespace TenantAPI.Controllers
             _db = db;
         }
 
-        // GET api/tenants
+        // GET api/tenants/?api-version=1.0
         [HttpGet]
         public ActionResult<IEnumerable<Tenant>> Get(string apartmentName, string apartmentNumber, string lastName)
         {
@@ -41,14 +41,14 @@ namespace TenantAPI.Controllers
             return query.ToList();
         }
 
-        // GET api/tenants/5
+        // GET api/tenants/5/?api-version=1.0
         [HttpGet("{id}")]
         public ActionResult<Tenant> Get(int id)
         {
             return _db.Tenants.FirstOrDefault(tenant => tenant.TenantId == id);
         }
 
-        // POST api/tenants
+        // POST api/tenants/?api-version=1.0
         [HttpPost]
         public void Post([FromBody] Tenant tenant)
         {
@@ -56,7 +56,7 @@ namespace TenantAPI.Controllers
             _db.SaveChanges();
         }
 
-        // PUT api/tenants/5
+        // PUT api/tenants/5/?api-version=1.0
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Tenant tenant)
         {
@@ -65,7 +65,7 @@ namespace TenantAPI.Controllers
             _db.SaveChanges();
         }
 
-        // DELETE api/tenants/5
+        // DELETE api/tenants/5/?api-version=1.0
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
