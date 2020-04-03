@@ -37,10 +37,13 @@
 
   | Features | Input | Output |
   | :----------- | :---- | :----- |
-  | Improved `GET` action. <br> When a user enters an incomplete apartment name, the application will still return results based on the input. | `http://localhost:5000/api/tenants/?apartmentname=b` | List of tenants with apartment names consisting a `"b"`  |
-  | Set default application to run on version 2.0 | N/A | N/A  |
+  | Improved `apartmentname` query search for `GET` action. <br> When a user enters an incomplete apartment name, the application will still return results based on the input. | `http://localhost:5000/api/tenants/?apartmentname=b` | List of tenants with apartment names consist of `"b"`  |
+  | Changed `lastname` query key to `name` for `GET` action. <br> A user can enter a name and the application will search through first and last names. | `http://localhost:5000/api/tenants/?name=ho` | List of tenants with tenant names consist of `"ho"`  |
+  | Set default application to run on version 2.0. No need to specify in the query string. | `http://localhost:5000/api/tenants` | List of all tenants  |
 
 </details>
+
+<br>
 
 <details>
   <summary>1.0</summary>
@@ -48,18 +51,33 @@
   | Features |
   | :----------- |
   | Basic working functionalities listed [below](#HTTP-Methods-and-Routes). |
+  | To call version 1.0, specify the version in the query string, i.e. `http://localhost:5000/api/tenants/?api-version=1.0` |
 
-</details>    
-
-## HTTP Methods and Routes
+#### HTTP Methods and Routes v. 1.0
 
 | HTTP Method | HTTP Route | Input | Output |
 | :---------- | :--------- | :---- | :----- |
-| GET | /api/tenants | N/A | View a list of all tenants |
-| GET | /api/tenants?apartmentname=`name+of+apt`&apartmentnumber=`apt#`&lastname=`last+name` | Insert search query values to HTTP route  | View a list of tenants by apartment name, apartment number and/or last name. |
-| POST | /api/tenants | JSON body | Create a new tenant |
-| PUT | /api/tenants/{id} | JSON body | Edit information on a tenant |
-| DELETE | /api/tenants/{id} | N/A | Remove a tenant |
+| GET | `http://localhost:5000/api/tenants/?api-version=1.0` | N/A | View a list of all tenants |
+| GET | `http://localhost:5000/api/tenants/?api-version=1.0?apartmentname=`name+of+apt`&apartmentnumber=`apt#`&lastname=`last+name`` | Insert search query values to HTTP route  | View a list of tenants by apartment name, apartment number and/or last name. |
+| POST | `http://localhost:5000/api/tenants/?api-version=1.0` | [Raw JSON body](#Sample-of-a-Raw-JSON-body) | Create a new tenant |
+| PUT | `http://localhost:5000/api/tenants/?api-version=1.0/{id}` | [Raw JSON body](#Sample-of-a-Raw-JSON-body) | Edit information on a tenant |
+| DELETE | `http://localhost:5000/api/tenants/?api-version=1.0/{id}` | N/A | Remove a tenant |
+
+#### Sample of a Raw JSON body:
+
+`````
+{
+  "firstName": "Mary",
+  "lastName": "Morstan",
+  "email": "morstan@spy.com",
+  "phone": "4477770000",
+  "apartmentName": "Downing Apartments",
+  "apartmentNumber": "103",
+  "isBackgroundChecked": true
+}
+`````
+
+</details>
 
 ## Screenshots/API Endpoints
 

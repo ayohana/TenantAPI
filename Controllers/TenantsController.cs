@@ -90,7 +90,7 @@ namespace TenantAPI.Controllers
 
         // GET api/tenants
         [HttpGet]
-        public ActionResult<IEnumerable<Tenant>> Get(string apartmentName, string apartmentNumber, string lastName)
+        public ActionResult<IEnumerable<Tenant>> Get(string apartmentName, string apartmentNumber, string name)
         {
             var query = _db.Tenants.AsQueryable();
             if (apartmentName != null)
@@ -99,11 +99,11 @@ namespace TenantAPI.Controllers
             }
             if (apartmentNumber != null)
             {
-                query = query.Where(tenant => tenant.ApartmentNumber == apartmentNumber);
+                query = query.Where(tenant => tenant.ApartmentNumber.Contains(apartmentNumber) == true);
             }
-            if (lastName != null)
+            if (name != null)
             {
-                query = query.Where(tenant => tenant.LastName == lastName);
+                query = query.Where(tenant => tenant.LastName.Contains(name) == true || tenant.FirstName.Contains(name) == true);
             }
             return query.ToList();
         }
