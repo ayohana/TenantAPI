@@ -1,33 +1,12 @@
 # [Tenant API](https://github.com/ayohana/TenantAPI.git/)
 
-#### C# Build an API Exercise for [Epicodus](https://www.epicodus.com/), 04.03.2020 v.2.0
+#### C# Build an API Exercise for [Epicodus](https://www.epicodus.com/), 04.03.2020 v. 2.0
 
 #### By [**Adela Darmansyah**](https://ayohana.github.io/portfolio/)
 
 ## Description
 
 **A service API that allows apartment managers to keep track of their tenants' contact information.**
-
-## Version History
-
-<details>
-  <summary>2.0</summary>
-
-  | Features | Input | Output |
-  | :----------- | :---- | :----- |
-  | Improved `GET` action. <br> When a user enters an incomplete apartment name, the application will still return results based on the input. | `http://localhost:5000/api/tenants/?apartmentname=b` | List of tenants with apartment names consisting a `"b"`  |
-  | Set default application to run on version 2.0 | N/A | N/A  |
-
-</details>
-
-<details>
-  <summary>1.0</summary>
-
-  | Features |
-  | :----------- |
-  | Basic working functionalities listed [below](#httproutes). |
-
-</details>
 
 ## User Stories
 
@@ -49,9 +28,30 @@
     * Enter the command `dotnet build` to build the project using its dependencies.
     * Enter the command `dotnet ef database update` to create a new, empty database. 
     * Enter `dotnet run` to run the application.
-    * Enter URL `http://localhost:5000/api/tenants` in Postman using one of the HTTP Methods below.
-    
-## HTTP Methods and Routes     {#httproutes}
+    * Enter URL `http://localhost:5000/api/tenants` in Postman using one of the HTTP Methods [below](#HTTP-Methods-and-Routes).
+
+## Version History
+
+<details>
+  <summary>2.0</summary>
+
+  | Features | Input | Output |
+  | :----------- | :---- | :----- |
+  | Improved `GET` action. <br> When a user enters an incomplete apartment name, the application will still return results based on the input. | `http://localhost:5000/api/tenants/?apartmentname=b` | List of tenants with apartment names consisting a `"b"`  |
+  | Set default application to run on version 2.0 | N/A | N/A  |
+
+</details>
+
+<details>
+  <summary>1.0</summary>
+
+  | Features |
+  | :----------- |
+  | Basic working functionalities listed [below](#HTTP-Methods-and-Routes). |
+
+</details>    
+
+## HTTP Methods and Routes
 
 | HTTP Method | HTTP Route | Input | Output |
 | :---------- | :--------- | :---- | :----- |
