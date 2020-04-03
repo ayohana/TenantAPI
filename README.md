@@ -6,7 +6,7 @@
 
 #### By [**Adela Darmansyah**](https://ayohana.github.io/portfolio/)
 
-[About](#About) | [User Stories](#User-Stories) | [Installation](#Installation-Instructions) | [Version History](#Version-History) | [Screenshots](#Screenshots/API-Endpoints) | [Bugs](#Known-Bugs) | [Technologies](#Technologies-Used) | [Contact](#Support-and-Contact-Details)
+[About](#About) | [User Stories](#User-Stories) | [Installation](#Installation-Instructions) | [Version History](#Version-History) | [Screenshots](#Screenshots) | [Bugs](#Known-Bugs) | [Technologies](#Technologies-Used) | [Contact](#Support-and-Contact-Details)
 
 ![GitHub](https://img.shields.io/github/license/ayohana/TenantAPI?color=%23DE98B2&style=for-the-badge) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ayohana/TenantAPI/master?color=%23DE98B2&style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/ayohana/TenantAPI?color=%23DE98B2&style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/ayohana/TenantAPI?color=%23DE98B2&style=for-the-badge)
 
@@ -43,6 +43,8 @@
 <details>
   <summary>2.0</summary>
 
+  <br>
+
   | Features | Input | Output |
   | :----------- | :---- | :----- |
   | Improved query search `apartmentname` and `apartmentnumber`  for `GET` action. <br> When a user enters a partial/incomplete apartment name or number, the application will still return results based on the input. | `http://localhost:5000/api/tenants/?apartmentname=b&apartmentnumber=2` | List of tenants with apartment names consist of `"b"` and apartment numbers consist of `"2"`  |
@@ -76,10 +78,10 @@
 
 </details>
 
-<br>
-
 <details>
   <summary>1.0</summary>
+
+  <br>
 
   | Features |
   | :----------- |
@@ -112,9 +114,7 @@
 
 </details>
 
-<br>
-
-## Screenshots/API Endpoints
+## Screenshots
 
 View all tenants in Postman:
 
