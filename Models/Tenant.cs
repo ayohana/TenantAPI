@@ -14,12 +14,12 @@ namespace TenantAPI.Models
     [EmailAddress]
     public string Email { get; set; }
     [Required]
-    [Phone]
-    public int Phone { get; set; }
+    [Phone, StringLength(12, ErrorMessage="Phone number cannot exceed 15 characters.")]
+    public string Phone { get; set; }
     [Required]
     public string ApartmentName { get; set; }
     [Required]
-    [StringLength(5, ErrorMessage="Apartment Number must not exceed 5 characters.")]
+    [StringLength(5, ErrorMessage="Apartment Number cannot exceed 5 characters.")]
     public string ApartmentNumber { get; set; }
     public bool IsBackgroundChecked { get; set; }
   }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TenantAPI.Models;
 
 namespace TenantAPI.Controllers
 {
@@ -10,33 +11,42 @@ namespace TenantAPI.Controllers
     [ApiController]
     public class TenantsController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private TenantAPIContext _db;
+
+        public TenantsController(TenantAPIContext db)
         {
-            return new string[] { "value1", "value2" };
+            _db = db;
         }
 
-        // GET api/values/5
+        // GET api/tenants
+        [HttpGet]
+        public ActionResult<IEnumerable<Tenant>> Get()
+        {
+            return _db.Tenants.ToList();
+        }
+
+        // GET api/tenants/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
             return "value";
         }
 
-        // POST api/values
+        // POST api/tenants
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Tenant tenant)
         {
+            _db.Tenants.Add(tenant);
+            _db.SaveChanges();
         }
 
-        // PUT api/values/5
+        // PUT api/tenants/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/values/5
+        // DELETE api/tenants/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
