@@ -1,12 +1,33 @@
 # [Tenant API](https://github.com/ayohana/TenantAPI.git/)
 
-#### C# Build an API Exercise for [Epicodus](https://www.epicodus.com/), 04.03.2020
+#### C# Build an API Exercise for [Epicodus](https://www.epicodus.com/), 04.03.2020 v.2.0
 
 #### By [**Adela Darmansyah**](https://ayohana.github.io/portfolio/)
 
 ## Description
 
-**This is a web API that allows apartment managers to keep track of their tenants' contact information.**
+**A service API that allows apartment managers to keep track of their tenants' contact information.**
+
+## Version History
+
+<details>
+  <summary>2.0</summary>
+
+  | Features | Input | Output |
+  | :----------- | :---- | :----- |
+  | Improved `GET` action. <br> When a user enters an incomplete apartment name, the application will still return results based on the input. | `http://localhost:5000/api/tenants/?apartmentname=b` | List of tenants with apartment names consisting a `"b"`  |
+  | Set default application to run on version 2.0 | N/A | N/A  |
+
+</details>
+
+<details>
+  <summary>1.0</summary>
+
+  | Features |
+  | :----------- |
+  | Basic working functionalities listed [below](#httproutes). |
+
+</details>
 
 ## User Stories
 
@@ -30,7 +51,7 @@
     * Enter `dotnet run` to run the application.
     * Enter URL `http://localhost:5000/api/tenants` in Postman using one of the HTTP Methods below.
     
-## HTTP Methods and Routes
+## HTTP Methods and Routes     {#httproutes}
 
 | HTTP Method | HTTP Route | Input | Output |
 | :---------- | :--------- | :---- | :----- |
@@ -39,6 +60,14 @@
 | POST | /api/tenants | JSON body | Create a new tenant |
 | PUT | /api/tenants/{id} | JSON body | Edit information on a tenant |
 | DELETE | /api/tenants/{id} | N/A | Remove a tenant |
+
+## Screenshots/API Endpoints
+
+<!-- TODO -->
+
+
+
+
 
 ## Known Bugs
 

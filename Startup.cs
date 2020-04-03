@@ -22,6 +22,12 @@ namespace TenantAPI
         {
             services.AddDbContext<TenantAPIContext>(opt =>
                 opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            
+            services.AddApiVersioning(o => {
+                o.ReportApiVersions = true;
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.DefaultApiVersion = new ApiVersion(2, 0);
+                });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
