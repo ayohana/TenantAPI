@@ -148,6 +148,7 @@ No known bugs at this time.
 * [EF Core](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql)
 * [Postman](https://www.postman.com/downloads/)
 * [API Versioning](https://neelbhatt.com/2018/04/21/api-versioning-in-net-core/)
+* [Azure](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
 
 ## Support and Contact Details
 
