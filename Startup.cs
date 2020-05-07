@@ -20,8 +20,11 @@ namespace TenantAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TenantAPIContext>(opt =>
-                opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<TenantAPIContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+
+            // services.AddDbContext<TenantAPIContext>(opt =>
+            //     opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             
             services.AddApiVersioning(o => {
                 o.ReportApiVersions = true;
