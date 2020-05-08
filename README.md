@@ -2,9 +2,9 @@
 
 # [Tenant API](https://github.com/ayohana/TenantAPI.git/)
 
-#### C# API Building Exercise for [Epicodus](https://www.epicodus.com/), 04.03.2020 v. 2.0
+#### C# API Building Exercise for [Epicodus](https://www.epicodus.com/), 05.08.2020 v. 2.0
 
-#### By [**Adela Darmansyah**](https://ayohana.github.io/portfolio/)
+#### By [**Adela Darmansyah**](https://github.com/ayohana/)
 
 [About](#About) | [User Stories](#User-Stories) | [Installation](#Installation-Instructions) | [Version History](#Version-History) | [Screenshots](#Screenshots) | [Bugs](#Known-Bugs) | [Technologies](#Technologies-Used) | [Contact](#Support-and-Contact-Details)
 
@@ -37,6 +37,8 @@
     * Enter the command `dotnet ef database update` to create a new, empty database. 
     * Enter `dotnet run` to run the application.
     * Enter URL `http://localhost:5000/api/tenants` in Postman using one of the HTTP Methods [below](#HTTP-Methods-and-Routes).
+
+* Or simply enter the following link: [http://my-tenant-api.azurewebsites.net/api/tenants](http://my-tenant-api.azurewebsites.net/api/tenants)
 
 ## Version History
 
@@ -148,7 +150,7 @@ No known bugs at this time.
 * [EF Core](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql)
 * [Postman](https://www.postman.com/downloads/)
 * [API Versioning](https://neelbhatt.com/2018/04/21/api-versioning-in-net-core/)
-* [Azure](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
+* [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/)
 
 ## Support and Contact Details
 

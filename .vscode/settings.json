@@ -1,0 +1,5 @@
+{
+  "appService.preDeployTask": "publish-release",
+  "appService.deploySubpath": "",
+  "appService.defaultWebAppToDeploy": "/subscriptions/02c1f27b-6a4c-45b2-b0c6-e935863b032f/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/azure-TenantAPI"
+}
